@@ -1,0 +1,341 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>2.3.1.RELEASE</version>
+      <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+    
+  <groupId>springboot_ws</groupId>
+  <artifactId>springboot_ws</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>springboot_ws</name>
+  <description/>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <jedis.version>3.1.0</jedis.version>
+    <mybatis.version>2.1.2</mybatis.version>
+    <swagger.version>2.9.2</swagger.version>
+    <easyproject.version>12.1.0.2.0</easyproject.version>
+    <fastjson.version>1.2.47</fastjson.version>
+    <redisson.version>3.6.5</redisson.version>
+    <commonlang3.version>3.4</commonlang3.version>
+    <jsonlib.version>2.4</jsonlib.version>
+    <hibernate.version>6.0.18.Final</hibernate.version>
+    <httpmime.version>4.5.2</httpmime.version>
+    <jwt.version>3.5.0</jwt.version>
+    <jsoup.version>1.9.2</jsoup.version>
+    <dom4j.version>1.6.1</dom4j.version>
+    <hutool.version>5.3.4</hutool.version>
+    <bitwalker.version>1.21</bitwalker.version>
+    <jpush-client.verion>3.3.11</jpush-client.verion>
+    <jiguang-common.version>1.0.8</jiguang-common.version>
+    <icepdf.version>4.1.1</icepdf.version>
+    <mapstruct.version>1.3.1.Final</mapstruct.version>
+  </properties>
+  
+  <dependencies>
+<!--   	<dependency> -->
+<!-- 	    <groupId>org.apache.cxf</groupId> -->
+<!-- 	    <artifactId>cxf-rt-transports-http-jetty</artifactId> -->
+<!-- 	    <version>3.1.6</version> -->
+<!-- 	</dependency> -->
+	<dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-core</artifactId>
+        <version>3.2.4</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        <version>3.2.4</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-transports-http</artifactId>
+        <version>3.2.4</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.apache.cxf</groupId>
+	    <artifactId>cxf-rt-transports-http-jetty</artifactId>
+	    <version>3.2.4</version>
+	</dependency>
+  	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- 热部署依赖 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-websocket</artifactId>
+    </dependency>
+    <!-- 自动根据属性内容提示配置文件的书写依赖 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper-spring-boot-starter</artifactId>
+        <version>1.2.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis.version}</version>
+    </dependency>
+    <!-- AOP配置 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
+    </dependency>
+    <!-- swagger -->
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${swagger.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>${swagger.version}</version>
+    </dependency>
+
+    <!-- druid连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+    <!--mapStruct依赖-->
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct-processor</artifactId>
+        <version>${mapstruct.version}</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.oracle.ojdbc</groupId>
+        <artifactId>ojdbc8</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>cn.easyproject</groupId>
+        <artifactId>orai18n</artifactId>
+        <version>${easyproject.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <optional>true</optional>
+    </dependency>
+
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>2.0.0-alpha0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+        <!--<exclusions>-->
+            <!--<exclusion>-->
+                <!--<groupId>org.junit.vintage</groupId>-->
+                <!--<artifactId>junit-vintage-engine</artifactId>-->
+            <!--</exclusion>-->
+        <!--</exclusions>-->
+    </dependency>
+
+    <!--redisson-->
+    <dependency>
+        <groupId>org.redisson</groupId>
+        <artifactId>redisson</artifactId>
+        <version>${redisson.version}</version>
+    </dependency>
+
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+    <!--            <exclusions>-->
+    <!--                <exclusion>-->
+    <!--                    <groupId>io.lettuce</groupId>-->
+    <!--                    <artifactId>lettuce-core</artifactId>-->
+    <!--                </exclusion>-->
+    <!--            </exclusions>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.session</groupId>-->
+    <!--            <artifactId>spring-session-data-redis</artifactId>-->
+    <!--        </dependency>-->
+    <!-- Redis-Jedis -->
+    <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>${jedis.version}</version>
+    </dependency>
+
+    <!-- jwt -->
+    <dependency>
+        <groupId>com.auth0</groupId>
+        <artifactId>java-jwt</artifactId>
+        <version>${jwt.version}</version>
+    </dependency>
+
+    <!-- xss过滤组件 -->
+    <dependency>
+        <groupId>org.jsoup</groupId>
+        <artifactId>jsoup</artifactId>
+        <version>${jsoup.version}</version>
+    </dependency>
+
+    <!-- commons-lang3 -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commonlang3.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>net.sf.json-lib</groupId>
+        <artifactId>json-lib</artifactId>
+        <version>${jsonlib.version}</version>
+        <classifier>jdk15</classifier>
+    </dependency>
+
+    <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>${hibernate.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>${dom4j.version}</version>
+    </dependency>
+
+
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpmime</artifactId>
+        <version>${httpmime.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>commons-httpclient</groupId>
+        <artifactId>commons-httpclient</artifactId>
+        <version>3.1</version>
+    </dependency>
+
+    <!-- 解析客户端操作系统、浏览器信息 -->
+    <dependency>
+        <groupId>eu.bitwalker</groupId>
+        <artifactId>UserAgentUtils</artifactId>
+        <version>${bitwalker.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>cn.jpush.api</groupId>
+        <artifactId>jpush-client</artifactId>
+        <version>${jpush-client.verion}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>cn.jpush.api</groupId>
+        <artifactId>jiguang-common</artifactId>
+        <version>${jiguang-common.version}</version>
+    </dependency>
+
+    <!-- pdf -->
+    <dependency>
+        <groupId>org.icepdf.os</groupId>
+        <artifactId>icepdf-core</artifactId>
+        <version>6.1.2</version>
+    </dependency>
+  
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>javax.servlet.jsp.jstl</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <version>3.1</version>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
