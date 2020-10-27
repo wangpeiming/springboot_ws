@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 
-@SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)//鎺掗櫎druid鑷姩鍔犺浇鏁版嵁婧�@MapperScan("com.szht.wsyy.**.mapper")
+@SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
 @EnableScheduling
 @EnableTransactionManagement
 public class AppRun {
